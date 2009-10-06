@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{remoteling-ruby}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Adrian Pike"]
@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.description = %q{Ruby gem for working with Remoteling (http://remoteling.com)}
   s.email = %q{adrian@pikeapps.com}
   s.extra_rdoc_files = ["README.rdoc", "lib/remoteling.rb"]
-  s.files = ["README.rdoc", "Rakefile", "lib/remoteling.rb", "Manifest", "remoteling-ruby.gemspec", "test/remoteling_test.rb"]
+  s.files = ["Manifest", "README.rdoc", "Rakefile", "lib/remoteling.rb", "test/remoteling_test.rb", "remoteling-ruby.gemspec"]
   s.homepage = %q{http://github.com/adrianpike/remoteling-ruby}
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Remoteling-ruby", "--main", "README.rdoc"]
   s.require_paths = ["lib"]

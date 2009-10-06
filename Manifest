@@ -2,4 +2,5 @@ Manifest
 README.rdoc
 Rakefile
 lib/remoteling.rb
+remoteling-ruby.gemspec
 test/remoteling_test.rb

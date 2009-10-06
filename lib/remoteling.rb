@@ -2,7 +2,6 @@ require 'yaml'
 require 'uri'
 require 'net/http'
 require 'cgi'
-require 'ruby2ruby'
 
 class Remoteling
 	class OurBad < Exception; end
@@ -11,8 +10,7 @@ class Remoteling
 	
 	CONFIG = {
 		:timeout => 2,
-#		:remoteling_host => 'http://remoteling.com/'
-		:remoteling_host => 'http://localhost:3000/'
+		:remoteling_host => 'http://remoteling.com/'
 	}
 	
 	def initialize(login,password)
