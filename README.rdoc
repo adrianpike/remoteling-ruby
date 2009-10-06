@@ -1,0 +1,24 @@
+Remoteling-Ruby
+=====
+This is the Ruby gem for [Remoteling][website].
+
+* See the [website][] for docs and to get an account.
+* We'd love to hear about any bugs or suggestions you have.
+
+Synopsis:
+======
+
+require 'remoteling-ruby'
+
+@remoteling = Remoteling.new('adrian@pikeapps.com','password')
+@remoteling.set('example','value')
+@remoteling.get('example')
+@remoteling.push('queue1','value')
+@remoteling.pop('queue1')
+@remoteling.run('proc_name','variables_to_send')
+@remoteling.run_serialized('p "foo"','more_variables_to_send')
+
+
+Copyright (c) 2009 Pike Engineering, released under the MIT license
+
+website: http://remoteling.com

@@ -21,16 +21,37 @@ class RemotelingTest < Test::Unit::TestCase
 			assert_equal 'lolwat', val
 		end
 		
-		should 'pop nulls off an empty queue' do
+		should 'pop falses off an empty queue' do
+			vals = []
+			2.times do
+				vals << @r.pop('foobar')
+			end
+			assert_equal false, vals.last
 		end
 		
 		should 'be able to execute a stored process' do
+			# We'll have to set up a stored process to be able to execute it.
 		end
 		
 		should 'be able to execute a serialized process' do
+			@r.set('foobar_test_results',nil)
+			code = <<EOM
+			Remoteling.store('foobar_test_results','yarr')
+EOM
+			@r.run_serialized(code, 'foobar')
+			sleep 2
+			assert_equal 'yarr', @r.get('foobar_test_results')
 		end
 		
-		should 'be able to pass variables to a process' do
+		should 'be able to pass variables to a serialized process' do
+			var = ''
+			5.times { var << rand(93) + 33 }
+			code = <<EOM
+			Remoteling.store('foobar_results',Remoteling.variables)
+EOM
+			@r.run_serialized(code, var)
+			sleep 2
+			assert_equal var, @r.get('foobar_results')
 		end
 	end
 	
