@@ -4,6 +4,19 @@ require 'lib/remoteling'
 
 class RemotelingTest < Test::Unit::TestCase
 
+	context 'a remoteling client with default creds stored in the class' do
+		setup do
+			@r = Remoteling.new('adrian@pikeapps.com', 'testing')
+		end
+		
+		# do a basic op to make sure that auth worked
+		should 'authenticate and be able to set and get something' do
+			@r.set('foobar','testing')
+			val = @r.get('foobar')
+			assert_equal 'testing', val
+		end
+	end
+
 	context 'a simple remoteling client' do
 		setup do
 			@r = Remoteling.new('adrian@pikeapps.com','testing')

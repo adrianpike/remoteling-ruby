@@ -13,7 +13,12 @@ class Remoteling
 		:remoteling_host => 'http://remoteling.com/'
 	}
 	
-	def initialize(login,password)
+	# we could use cattr_accessor if we had active_support, but its probably not worth pulling it in just for that
+	def self.default_login=(login) @@default_login = login; end
+	def self.default_password=(password) @@default_password = password; end
+
+	
+	def initialize(login = @@default_login, password = @@default_password)
 		@login = login
 		@password = password
 	end
