@@ -10,8 +10,7 @@ class Remoteling
 	
 	CONFIG = {
 		:timeout => 2,
-		#:remoteling_host => 'http://remoteling.com/'
-		:remoteling_host => 'http://localhost:3000/'
+		:remoteling_host => 'http://remoteling.com/'
 	}
 	
 	# we could use cattr_accessor if we had active_support, but its probably not worth pulling it in just for that

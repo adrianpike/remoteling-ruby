@@ -7,7 +7,7 @@ Echoe.new('remoteling-ruby', '0.0.4') do |p|
   p.url             = "http://github.com/adrianpike/remoteling-ruby"  
   p.author          = "Adrian Pike"  
   p.email           = "adrian@pikeapps.com"  
-  p.ignore_pattern  = ["tmp/*", "script/*"]  
+  p.ignore_pattern  = ["tmp/*", "script/*"]
   p.development_dependencies = []  
 end  
 

@@ -3,7 +3,7 @@ require 'shoulda'
 require 'lib/remoteling'
 
 class RemotelingTest < Test::Unit::TestCase
-	TESTING_KEY = '2b0846cab17d80d2dae115bbedc3aa75cd732dccb5f412ea5e2451d6afd31fb9' # you'll want to set this!
+	TESTING_KEY = 'XXX' # you'll want to set this!
 
 	context 'a remoteling client with default creds stored in the class' do
 		setup do
