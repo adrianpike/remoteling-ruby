@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{remoteling-ruby}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Adrian Pike"]
-  s.date = %q{2009-10-06}
+  s.date = %q{2009-10-10}
   s.description = %q{Ruby gem for working with Remoteling (http://remoteling.com)}
   s.email = %q{adrian@pikeapps.com}
   s.extra_rdoc_files = ["README.rdoc", "lib/remoteling.rb"]

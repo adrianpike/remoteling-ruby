@@ -10,17 +10,20 @@ class Remoteling
 	
 	CONFIG = {
 		:timeout => 2,
-		:remoteling_host => 'http://remoteling.com/'
+		#:remoteling_host => 'http://remoteling.com/'
+		:remoteling_host => 'http://localhost:3000/'
 	}
 	
 	# we could use cattr_accessor if we had active_support, but its probably not worth pulling it in just for that
-	def self.default_login=(login) @@default_login = login; end
-	def self.default_password=(password) @@default_password = password; end
-
+	def key=(key) @@key = key; end
 	
-	def initialize(login = @@default_login, password = @@default_password)
-		@login = login
-		@password = password
+	def initialize(key = @@key)
+		@api_key = key
+	end
+	
+	#Store functions
+	def all_keys
+		call_action('store', :get, '')
 	end
 	
 	def set(key,value)
@@ -31,7 +34,8 @@ class Remoteling
 	  deserialize(call_action('store', :get, key))
 	end
 	
-	def push(queue_name, item)
+	# Queue functions
+  def push(queue_name, item)
 		call_action('queue', :put, queue_name, serialize(item))
 	end
 	
@@ -62,7 +66,7 @@ class Remoteling
 			req = Net::HTTP::Put.new(url.path)
 		end
 		
-		req.basic_auth @login, @password
+		req.basic_auth @api_key, ''
 		res = Net::HTTP.new(url.host, url.port).start {|http|
 			if data.is_a?(Hash) then
 				req.set_form_data(data)

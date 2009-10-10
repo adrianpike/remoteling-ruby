@@ -1,8 +1,8 @@
 Remoteling-Ruby
 =====
-This is the Ruby gem for [Remoteling][website].
+This is the Ruby gem for Remoteling.
 
-* See the [website][] for docs and to get an account.
+* See http://remoteling.com/ for docs and to get an account.
 * We'd love to hear about any bugs or suggestions you have.
 
 Synopsis:
@@ -10,10 +10,9 @@ Synopsis:
 
 	require 'remoteling-ruby'
 	
-	@remoteling = Remoteling.new('adrian@pikeapps.com','password')
+	@remoteling = Remoteling.new('2b0846cab17d80d2dae115bbedc3aa75cd732dccb5f412ea5e2451d6afd31fb9')
 	# - or -
-	Remoteling.default_login = 'adrian@pikeapps.com'
-	Remoteling.default_password = 'password'
+	Remoteling.key = '2b0846cab17d80d2dae115bbedc3aa75cd732dccb5f412ea5e2451d6afd31fb9'
 	@remoteling = Remoteling.new
 	
 	@remoteling.set('example','value')
@@ -24,5 +23,3 @@ Synopsis:
 	@remoteling.run_serialized('p "foo"','more_variables_to_send')
 
 Copyright (c) 2009 Pike Engineering, released under the MIT license
-
-website: http://remoteling.com

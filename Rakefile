@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'  
 require 'echoe'  
   
-Echoe.new('remoteling-ruby', '0.0.2') do |p|  
+Echoe.new('remoteling-ruby', '0.0.4') do |p|  
   p.description     = "Ruby gem for working with Remoteling (http://remoteling.com)"
   p.url             = "http://github.com/adrianpike/remoteling-ruby"  
   p.author          = "Adrian Pike"  
