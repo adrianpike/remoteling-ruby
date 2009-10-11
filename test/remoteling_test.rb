@@ -58,8 +58,7 @@ EOM
 		end
 		
 		should 'be able to pass variables to a serialized process' do
-			var = ''
-			5.times { var << rand(93) + 33 }
+			var = ''; 5.times { var << rand(93) + 33 }
 			code = <<EOM
 			Remoteling.store('foobar_results',Remoteling.variables)
 EOM
